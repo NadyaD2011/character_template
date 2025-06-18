@@ -51,30 +51,8 @@
     border-bottom: 1px solid rgb(83, 63, 39);
     margin-bottom: 15px;
     padding-bottom: 3px;
-    width: 85%;
 }
 
 .character__skills{
     margin-top: 10px;
-}
-.characteristics_stars{
-    display: flex;
-    width: 38%;
-    align-items: center;
-    justify-content: space-between;
-}
-.characteristic_stars{
-    width: 60%;
-}
-.stars{
-    height: 20%;
-}
-.star{
-    width: 4.5%;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.characteristics{
-    width: 40%;
 }
