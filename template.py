@@ -140,7 +140,7 @@ def main():
     quantity_cards = int(input("Сколько карточек нужно создать: "))
 
     for num in range(0, quantity_cards):
-        character, clases_base = create_card(template, races, classes)
+        character, clases_base = create_card(races, classes)
         character_class = character['class']
         rendered_page = template.render(
             name = character['name'],
