@@ -1,8 +1,8 @@
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-
 import random
 import os
+
 
 def create_card(num, file_name):
     races = ['Орк', 'Хоббит', 'Эльф', 'Гном']
@@ -88,16 +88,22 @@ def create_card(num, file_name):
     with open(f'{file_name}/index_{num+1}.html', 'w', encoding="utf8") as file:
         file.write(rendered_page)
 
-env = Environment(
-    loader=FileSystemLoader('.'),
-    autoescape=select_autoescape(['html'])
-)
-template = env.get_template('template.html')
 
-file_name = 'characters'
-os.makedirs(file_name, exist_ok=True)
+def main():
+    env = Environment(
+        loader=FileSystemLoader('.'),
+        autoescape=select_autoescape(['html'])
+    )
+    template = env.get_template('template.html')
 
-quantity_cards = int(input("Сколько карточек нужно создать: "))
+    file_name = 'characters'
+    os.makedirs(file_name, exist_ok=True)
 
-for num in range(0, quantity_cards):
-    create_card(num, file_name)
+    quantity_cards = int(input("Сколько карточек нужно создать: "))
+
+    for num in range(0, quantity_cards):
+        create_card(num, file_name)
+
+
+if __name__ == "main":
+    main()
