@@ -103,7 +103,7 @@ def create_card(races, classes):
     character_class = classes[(int(input(f'Введите номер класса от 1 до {len(classes)}(классы: {classes}): ')))-1]
     skills = random.sample(clases_base[character_class]['skills'], 3)
 
-    character_date = {
+    character = {
         'name': character_name,
         'race': character_race,
         'class': character_class,
@@ -116,7 +116,7 @@ def create_card(races, classes):
         'img': clases_base[character_class]['img']
     }
 
-    return character_date
+    return character
 
 
 def main():
