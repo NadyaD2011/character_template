@@ -22,7 +22,7 @@ def create_card(races, classes):
                 'Прилив сил',
                 'Морозный доспех'
             ],
-            'img': 'images/wizard.png',
+            'img': 'images/wizard.png'
         },
         'Воин': {
             'strength': 15,
@@ -40,7 +40,7 @@ def create_card(races, classes):
                 'Мощный удар',
                 'Глубокие раны'
             ],
-            'img': 'images/warrior.png',
+            'img': 'images/warrior.png'
         },
         'Бард': {
             'strength': random.randint(1, 3),
@@ -58,7 +58,7 @@ def create_card(races, classes):
                 'Песнь ветра',
                 'Реквием'
             ],
-            'img': 'images/bard.webp',
+            'img': 'images/bard.webp'
         },
         'Ассасин': {
             'strength': random.randint(1, 3),
@@ -76,7 +76,7 @@ def create_card(races, classes):
                 'Ошеломление',
                 'Спринт'
             ],
-            'img': 'images/assasin.png',
+            'img': 'images/assasin.png'
         },
         'Лучник': {
             'strength': random.randint(1, 3),
@@ -94,8 +94,8 @@ def create_card(races, classes):
                 'Осветительная ракета',
                 'Приручение животного'
             ],
-            'img': 'images/archer.png',
-        },
+            'img': 'images/archer.png'
+        }
     }
 
     character_name = input('Введите имя персонажа: ').capitalize()
