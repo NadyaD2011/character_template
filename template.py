@@ -106,14 +106,16 @@ def create_card(races, classes):
     character = {
         'name': character_name,
         'race': character_race,
-        'class': character_class,
-        'skills': skills,
+        'character_class': character_class,
+        'first_skill': skills[0],
+        'second_skill': skills[1],
+        'third_skill': skills[2],
         'strength': clases_base[character_class]['strength'],
         'agility': clases_base[character_class]['agility'],
         'intelligence': clases_base[character_class]['intelligence'],
         'luck': clases_base[character_class]['luck'],
         'temper': clases_base[character_class]['temper'],
-        'img': clases_base[character_class]['img']
+        'image': clases_base[character_class]['img']
     }
 
     return character
@@ -147,20 +149,7 @@ def main():
 
     for num in range(0, quantity_cards):
         character = create_card(races, classes)
-        rendered_page = template.render(
-            name = character['name'],
-            race = character['race'],
-            character_class = character['class'],
-            image = character['img'],
-            strength = character['strength'],
-            agility = character['agility'],
-            intelligence = character['intelligence'],
-            luck = character['luck'],
-            temper = character['temper'],
-            first_skill = character['skills'][0],
-            second_skill = character['skills'][1],
-            third_skill = character['skills'][2],
-        )
+        rendered_page = template.render(character)
         with open(f'{dir_name}/index_{num+1}.html', 'w', encoding="utf8") as file:
             file.write(rendered_page)
 
