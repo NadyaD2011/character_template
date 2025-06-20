@@ -107,10 +107,16 @@ def create_card(races, classes):
         'name': character_name,
         'race': character_race,
         'class': character_class,
-        'skills': skills
+        'skills': skills,
+        'strength': clases_base[character_class]['strength'],
+        'agility': clases_base[character_class]['agility'],
+        'intelligence': clases_base[character_class]['intelligence'],
+        'luck': clases_base[character_class]['luck'],
+        'temper': clases_base[character_class]['temper'],
+        'img': clases_base[character_class]['img']
     }
 
-    return character_date, clases_base
+    return character_date
 
 
 def main():
@@ -140,18 +146,17 @@ def main():
     quantity_cards = int(input("Сколько карточек нужно создать: "))
 
     for num in range(0, quantity_cards):
-        character, clases_base = create_card(races, classes)
-        character_class = character['class']
+        character = create_card(races, classes)
         rendered_page = template.render(
             name = character['name'],
             race = character['race'],
-            character_class = character_class,
-            image = clases_base[character_class]['img'],
-            strength = clases_base[character_class]['strength'],
-            agility = clases_base[character_class]['agility'],
-            intelligence = clases_base[character_class]['intelligence'],
-            luck = clases_base[character_class]['luck'],
-            temper = clases_base[character_class]['temper'],
+            character_class = character['class'],
+            image = character['img'],
+            strength = character['strength'],
+            agility = character['agility'],
+            intelligence = character['intelligence'],
+            luck = character['luck'],
+            temper = character['temper'],
             first_skill = character['skills'][0],
             second_skill = character['skills'][1],
             third_skill = character['skills'][2],
@@ -160,5 +165,5 @@ def main():
             file.write(rendered_page)
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
